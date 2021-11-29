@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-*d&ah@ef3z&(q%a%0bgp2=1_)&hnh5vjllr50tirn5wxjz)*)5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["d694-185-34-240-5.ngrok.io"]
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'main',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'planeapps.urls'
+
+AUTH_USER_MODEL = "main.PersonalShope"
+
 
 TEMPLATES = [
     {
@@ -103,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
