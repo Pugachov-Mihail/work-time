@@ -22,7 +22,6 @@ class PersonalShope(AbstractUser):
 
 
 class PlansMonth(models.Model):
-    shopname = models.ForeignKey(ShopName, on_delete=models.CASCADE, verbose_name='Название ТТ')
     metal = models.IntegerField(null=False, blank=False,verbose_name="Железо")
     accs = models.IntegerField(null=False, blank=False,verbose_name="Аксы")
     dop = models.IntegerField(null=False, blank=False,verbose_name="Доп оборот")
@@ -34,6 +33,7 @@ class PlansMonth(models.Model):
     tele = models.IntegerField(null=False, blank=False,verbose_name="Теле 2")
     persone = models.IntegerField(null=False, blank=False,verbose_name="Сотрудников")
     date = models.DateTimeField(null=False, blank=False,auto_now=True)
+    shopname = models.ForeignKey(ShopName, on_delete=models.CASCADE, verbose_name='Название ТТ')
 
     def __str__(self):
         return ("Планы на месяц торговой точки: " + self.shopname.name)
