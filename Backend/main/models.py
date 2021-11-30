@@ -36,7 +36,27 @@ class PlansMonth(models.Model):
     date = models.DateTimeField(null=False, blank=False,auto_now=True)
 
     def __str__(self):
-        return ("Планы торговой точки: " + self.shopname.name)
+        return ("Планы на месяц торговой точки: " + self.shopname.name)
+
+    class Meta:
+        verbose_name_plural = "Планы на месяц"
+
+
+class PlansDay(models.Model):
+    shopname = models.ForeignKey(PlansMonth, on_delete=models.CASCADE, verbose_name='Планы ТТ')
+    metal = models.IntegerField(null=False, blank=False,verbose_name="Железо")
+    accs = models.IntegerField(null=False, blank=False,verbose_name="Аксы")
+    dop = models.IntegerField(null=False, blank=False,verbose_name="Доп оборот")
+    oss = models.IntegerField(null=False, blank=False,verbose_name="ОСС")
+    setting = models.IntegerField(null=False, blank=False,verbose_name="Настройки")
+    bil = models.IntegerField(null=False, blank=False,verbose_name="Билайн")
+    mega = models.IntegerField(null=False, blank=False,verbose_name="Мегафон")
+    yota = models.IntegerField(null=False, blank=False,verbose_name="Yota")
+    tele = models.IntegerField(null=False, blank=False,verbose_name="Теле 2")
+    date = models.DateTimeField(null=False, blank=False,auto_now=True)
+
+    def __str__(self):
+        return ('Планы на: ', self.date )
 
     class Meta:
         verbose_name_plural = "Планы на день"
