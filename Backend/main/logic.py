@@ -1,10 +1,6 @@
 def day(pers):
-    plan = pers.objects.all()
-    for plans in plan:
-        print(plan)
-        print(isinstance(plans, int))
-        if isinstance(plans, int):
-            plans = plans / 30
-            return plans
-        else:
-            day(plan)
+    METRICS = ('metal', 'accs', 'dop', 'oss', 'setting', 'bil', 'mega', 'yota', 'tele')
+    for field in METRICS:
+        plan = pers.objects.filter(METRICS)
+        plan[field] = 31
+        return plan
